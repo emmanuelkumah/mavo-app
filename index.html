@@ -8,9 +8,11 @@
     <title>Mavo Demo</title>
   </head>
   <body>
-    <header mv-app="homepage" mv-storage="local">
+    <header mv-app="homepage" mv-storage="local" mv-plugins="tinymce">
       <img property="image" alt="Lord of rings" />
-      <article property="heroCaption">Content goes here</article>
+      <article property="heroCaption" class="tinymce">
+        Content goes here
+      </article>
     </header>
     <main>
       <h1>Lord of the Wings</h1>
