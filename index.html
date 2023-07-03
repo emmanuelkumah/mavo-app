@@ -11,26 +11,52 @@
     <div mv-app="firstApp" mv-storage="local">
       <h1 property="heading" style="background: yellowgreen">First apop</h1>
       <p property>This is the heading</p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, quae
-        deleniti numquam molestiae aut repellendus illum, cum blanditiis illo,
-        quidem dolore excepturi dolores? Laboriosam qui eum sit et beatae.
-        Laudantium.
-      </p>
-      <p style="background: burlywood">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,
-        aliquam.
-      </p>
+      <!--Complex list -->
+      <article property="pet" mv-multiple>
+        <h1 property="name">Cat basta</h1>
+        Born on
+        <time property="birthday" datetime="2022-06-01">1 June 2022</time>
+      </article>
+      <!-- Add multiple lists -->
       <ul>
-        <li>Testing</li>
-        <li>With</li>
-        <li>Mavo</li>
+        <li property="hobbies" mv-multiple>Learning</li>
       </ul>
+      <!-- add image to page -->
       <img
         property="avatar"
         src="https://demoapus1.com/freeio/wp-content/uploads/elementor/thumbs/service8-py2khwd9b307cpru7zo4vne3y7r9bf2fwt3v6dbncw.jpg"
         alt="Image"
       />
+      <!-- Store data locally -->
+      <div mv-storage="local">
+        <label
+          >Email
+          <input type="email" property="email" value="me@me.com" />
+        </label>
+        <label>
+          message
+          <textarea property="message">
+            Edit this form
+          </textarea>
+        </label>
+      </div>
+      <!-- Expressions -->
+      <div
+        mv-app="people"
+        class="mv-autoedit"
+        mv-source="https://test.mavo.io/data/persons.json"
+      >
+        [count(person)] people in the list has an average age of [average(age)]
+        years.
+        <p>Total hobbies is [count(hobby)]</p>
+        <ul>
+          <li property="person" mv-multiple>
+            <strong property="name"></strong>
+            <br /><span property="age"></span> years old <br />Next year I will
+            be [age] years old.
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
